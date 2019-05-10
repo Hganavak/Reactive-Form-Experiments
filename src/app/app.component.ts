@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -10,6 +10,6 @@ export class AppComponent  {
   myFormControl: FormControl;
 
   constructor() {
-    this.myFormControl = new FormControl('Name'); // The initial value of the form element
+    this.myFormControl = new FormControl('Default Value', [Validators.required, Validators.minLength(9)]); // The initial value of the form element
   }
 }
