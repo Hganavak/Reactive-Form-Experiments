@@ -1,2 +1,5 @@
 <h1>Gia Su</h1>
 <input type="text" [formControl]="myFormControl">
+<br />
+<span style="color: blue" *ngIf="myFormControl.pristine">Is Pristine</span>
+<span style="color: red" *ngIf="myFormControl.dirty">Is Dirty</span>
