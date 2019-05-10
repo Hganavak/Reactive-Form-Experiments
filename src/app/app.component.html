@@ -1,17 +1,24 @@
-<h1>Reactive Form</h1>
+<h1>Reactive Form Experiments</h1>
 <hr />
 
-<h2>Email/Pass Example</h2>
+<h2>FormGroup Experiment: Email/Pass Example</h2>
+<p>
+  Uses formGroup, and built in + custom validators.
+</p>
 <form [formGroup]="myFormGroup">
   <input type="email" formControlName="email">
   <input type="password" formControlName="password" placeholder="Enter Password">
   <input type="password" formControlName="confirm_password" placeholder="Confirm Enter Password">
 </form>
 
+<span style="color: red" *ngIf="myFormGroup.get('password').dirty && myFormGroup.get('confirm_password').dirty && myFormGroup.hasError('passwordMatch')">Passwords Don't Match<br /></span>
 <button [disabled]="myFormGroup.invalid">Submit</button>
 
 <hr />
-<h2>State Examples</h2>
+<h2>Imperitive formControl Experiment: State Examples</h2>
+<p>
+  Follows the imperitive approach using formControl. Demonstrates form states.
+</p>
 <input type="text" [formControl]="myFormControl">
 <br />
 
@@ -25,3 +32,10 @@
 
 <span style="color: blue" *ngIf="myFormControl.valid">Is Valid</span>
 <span style="color: red" *ngIf="myFormControl.invalid">Is Invalid</span>
+
+<hr />
+<h2>Async Validators Experiment: Post Code Example</h2>
+Makes a call to an external API.
+<form [formGroup]="myFormGroup2">
+  <input formControlName="postcode">
+</form>
