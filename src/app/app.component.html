@@ -1,4 +1,17 @@
-<h1>Gia Su</h1>
+<h1>Reactive Form</h1>
+<hr />
+
+<h2>Email/Pass Example</h2>
+<form [formGroup]="myFormGroup">
+  <input type="email" formControlName="email">
+  <input type="password" formControlName="password" placeholder="Enter Password">
+  <input type="password" formControlName="confirm_password" placeholder="Confirm Enter Password">
+</form>
+
+<button [disabled]="myFormGroup.invalid">Submit</button>
+
+<hr />
+<h2>State Examples</h2>
 <input type="text" [formControl]="myFormControl">
 <br />
 
